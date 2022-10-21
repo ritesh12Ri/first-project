@@ -9,12 +9,12 @@ router.get('/missing',function(req,res){
  let array = [1,2,3,4,6,7]
  let n = array.length+1   //expected length of the array n=5+1=6
  let expSum = n*(n+1)/2   //expected sum of the array
- let sumOfArr = 0
- for(let i=0; i<array.length; i++){
-    sumOfArr = sumOfArr + array[i]
- }
+ let sumOfArr = array.reduce((x,y) => x + y)  
+//  for(let i=0; i<array.length; i++){
+//     sumOfArr = sumOfArr + array[i]
+//  }
  let missNo =  expSum - sumOfArr
- console.log(missNo)
+//  console.log(missNo)
  res.send("updated array is" + missNo)
 
 })
